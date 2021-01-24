@@ -22,6 +22,8 @@
 #include "keymap_russian.h"
 #include "keymap_uk.h"
 #include "keymap_estonian.h"
+#include "keymap_belgian.h"
+#include "keymap_us_international.h"
 
 #define KC_MAC_UNDO LGUI(KC_Z)
 #define KC_MAC_CUT LGUI(KC_X)
@@ -41,17 +43,19 @@
 
 enum custom_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
+  BP_LSPO,
+  BP_RSPC,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
-    KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_6,                                           KC_EQUAL,       KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,
-    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_BSPACE,                                      KC_BSPACE,      KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_LBRACKET,
-    KC_LCTRL,       KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      CTL_T(KC_QUOTE),
-    KC_LSHIFT,      KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           KC_ENTER,                                       KC_ENTER,       KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RSHIFT,
-    MO(1),          KC_NONUS_BSLASH,KC_CAPSLOCK,    KC_LGUI,        KC_LALT,                                                                                                        KC_RALT,        KC_APPLICATION, KC_WWW_HOME,    KC_RBRACKET,    KC_BSLASH,
+    BP_DLR,         BP_DQOT,        BP_LGIL,        BP_RGIL,        BP_LPRN,        BP_RPRN,        BP_AT,                                          BP_PERC,        BP_AT,          BP_PLUS,        BP_MINS,        BP_SLSH,        BP_ASTR,        BP_EQL,
+    KC_TAB,         BP_B,           BP_ECUT,        BP_P,           BP_O,           BP_EGRV,        KC_BSPACE,                                      KC_BSPACE,      BP_DCRC,        BP_V,           BP_D,           BP_L,           BP_J,           BP_Z,
+    KC_LCTRL,       BP_A,           BP_U,           BP_I,           BP_E,           BP_COMM,                                                                        BP_C,           BP_T,           BP_S,           BP_R,           BP_N,           LCTL_T(BP_M),
+    KC_LSHIFT,      BP_AGRV,        BP_Y,           BP_X,           BP_DOT,         BP_K,           KC_ENTER,                                       KC_ENTER,       BP_APOS,        BP_Q,           BP_G,           BP_H,           BP_F,           KC_RSHIFT,
+    MO(1),          BP_ECIR,        KC_CAPSLOCK,    KC_LGUI,        KC_LALT,                                                                                                        KC_RALT,        KC_APPLICATION, KC_WWW_HOME,    BP_W,           BP_CCED,
                                                                                                     KC_INSERT,      KC_AUDIO_MUTE,  KC_SYSTEM_SLEEP,LGUI(KC_INSERT),
-                                                                                                                    KC_AUDIO_VOL_UP,LGUI(KC_O),
+                                                                                                                    KC_AUDIO_VOL_UP,LGUI(BP_L),
                                                                                     KC_SPACE,       KC_ESCAPE,      KC_AUDIO_VOL_DOWN,TO(1),          KC_DELETE,      MO(1)
   ),
   [1] = LAYOUT_ergodox_pretty(
@@ -75,20 +79,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TO(3),          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_ergodox_pretty(
-    KC_F2,          KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_6,                                           KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,KC_AUDIO_MUTE,  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_L,           KC_TRANSPARENT, KC_TRANSPARENT, KC_J,           KC_COMMA,                                       KC_BSPACE,      KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_QUOTE,                                                                       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_K,           KC_TRANSPARENT, KC_I,           KC_U,           KC_TRANSPARENT, KC_SLASH,                                       KC_ENTER,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_DOT,         KC_H,           KC_SCOLON,      KC_O,           KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                    KC_7,           KC_0,           KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                    KC_RBRACKET,    KC_TRANSPARENT,
-                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_LBRACKET,    TO(0),          KC_TRANSPARENT, KC_TRANSPARENT
+    KC_F2,          BP_1,           BP_2,           BP_3,           BP_4,           BP_5,           BP_6,                                           KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,KC_AUDIO_MUTE,  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, BP_R,           KC_TRANSPARENT, KC_TRANSPARENT, BP_T,           BP_G,                                           KC_BSPACE,      KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, BP_M,                                                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_TRANSPARENT, BP_S,           KC_TRANSPARENT, BP_D,           BP_V,           KC_TRANSPARENT, BP_F,                                           KC_ENTER,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    BP_H,           BP_C,           BP_N,           BP_L,           KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                    BP_7,           BP_0,           KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                    BP_W,           KC_TRANSPARENT,
+                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, BP_Z,           TO(0),          KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
 
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
+    case BP_LSPO:
+      perform_space_cadet(record, keycode, KC_LSFT, KC_TRNS, BP_LPRN);
+      return false;
+    case BP_RSPC:
+      perform_space_cadet(record, keycode, KC_LSFT, KC_TRNS, BP_RPRN);
+      return false;
   }
   return true;
 }
