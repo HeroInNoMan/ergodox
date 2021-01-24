@@ -77,8 +77,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_QUOTE,                                                                       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_K,           KC_TRANSPARENT, KC_I,           KC_U,           KC_TRANSPARENT, KC_SLASH,                                       KC_ENTER,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_DOT,         KC_H,           KC_SCOLON,      KC_O,           KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                    KC_7,           KC_KP_8,        KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                    KC_KP_9,        KC_TRANSPARENT,
+                                                                                                    KC_7,           KC_INT8,        KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                    BP_9,           KC_TRANSPARENT,
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_0,           TO(0),          KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
