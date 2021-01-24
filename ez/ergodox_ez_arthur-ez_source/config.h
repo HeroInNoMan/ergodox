@@ -3,4 +3,4 @@
   See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
 */
 #define ORYX_CONFIGURATOR
-#define FIRMWARE_VERSION u8"aeGY5/4wVlM"
+#define FIRMWARE_VERSION u8"eWqjx/A0XV0"
