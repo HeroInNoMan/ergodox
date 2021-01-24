@@ -47,8 +47,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTRL,       KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      CTL_T(KC_QUOTE),
     KC_LSHIFT,      KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           KC_ENTER,                                       KC_ENTER,       KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RSHIFT,
     MO(1),          KC_NONUS_BSLASH,KC_CAPSLOCK,    KC_LGUI,        KC_LALT,                                                                                                        KC_RALT,        KC_APPLICATION, KC_WWW_HOME,    KC_RBRACKET,    KC_BSLASH,
-                                                                                                    KC_INSERT,      KC_AUDIO_MUTE,  KC_PAUSE,       KC_PSCREEN,
-                                                                                                                    KC_AUDIO_VOL_UP,KC_CALCULATOR,
+                                                                                                    KC_INSERT,      KC_AUDIO_MUTE,  KC_SYSTEM_SLEEP,KC_SYSTEM_POWER,
+                                                                                                                    KC_AUDIO_VOL_UP,KC_SYSTEM_WAKE,
                                                                                     KC_SPACE,       KC_ESCAPE,      KC_AUDIO_VOL_DOWN,TO(1),          KC_DELETE,      MO(1)
   ),
   [1] = LAYOUT_ergodox_pretty(
@@ -57,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_MS_WH_DOWN,  KC_MS_LEFT,     KC_MS_DOWN,     KC_MS_RIGHT,    KC_MS_BTN4,                                                                     KC_TRANSPARENT, KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_PGDOWN,      KC_F13,
     KC_TRANSPARENT, LALT(KC_F4),    KC_MS_WH_LEFT,  KC_TRANSPARENT, KC_MS_WH_RIGHT, KC_MS_BTN5,     KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_SCROLLLOCK,  KC_TRANSPARENT, KC_TRANSPARENT, KC_F14,
     KC_TRANSPARENT, LSFT(KC_DELETE),LCTL(KC_INSERT),LSFT(KC_INSERT),KC_PC_UNDO,                                                                                                     KC_MS_BTN1,     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_F15,
-                                                                                                    LED_LEVEL,      KC_SYSTEM_POWER,KC_TRANSPARENT, KC_TRANSPARENT,
-                                                                                                                    KC_SYSTEM_SLEEP,KC_TRANSPARENT,
-                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_SYSTEM_WAKE, TO(2),          KC_TRANSPARENT, KC_TRANSPARENT
+                                                                                                    KC_CALCULATOR,  KC_PAUSE,       KC_TRANSPARENT, KC_TRANSPARENT,
+                                                                                                                    LALT(KC_PSCREEN),KC_TRANSPARENT,
+                                                                                    KC_TRANSPARENT, KC_TRANSPARENT, KC_PSCREEN,     TO(2),          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [2] = LAYOUT_ergodox_pretty(
     WEBUSB_PAIR,    LSFT(KC_1),     LSFT(KC_2),     LSFT(KC_3),     LSFT(KC_4),     LSFT(KC_5),     LSFT(KC_6),                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_NUMLOCK,     KC_KP_SLASH,    KC_KP_ASTERISK, KC_KP_MINUS,    KC_TRANSPARENT,
