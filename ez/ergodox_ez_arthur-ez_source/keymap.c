@@ -41,8 +41,6 @@
 
 enum custom_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
-  BP_LSPO,
-  BP_RSPC,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -52,8 +50,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTRL,       KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCOLON,      CTL_T(KC_QUOTE),
     KC_LSHIFT,      KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,           KC_ENTER,                                       KC_ENTER,       KC_N,           KC_M,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RSHIFT,
     MO(1),          KC_NONUS_BSLASH,KC_CAPSLOCK,    KC_LGUI,        KC_LALT,                                                                                                        KC_RALT,        KC_APPLICATION, KC_WWW_HOME,    KC_RBRACKET,    KC_BSLASH,
-                                                                                                    KC_INSERT,      KC_AUDIO_MUTE,  KC_SYSTEM_SLEEP,KC_SYSTEM_POWER,
-                                                                                                                    KC_AUDIO_VOL_UP,KC_SYSTEM_WAKE,
+                                                                                                    KC_INSERT,      KC_AUDIO_MUTE,  KC_SYSTEM_SLEEP,LGUI(KC_INSERT),
+                                                                                                                    KC_AUDIO_VOL_UP,LGUI(KC_O),
                                                                                     KC_SPACE,       KC_ESCAPE,      KC_AUDIO_VOL_DOWN,TO(1),          KC_DELETE,      MO(1)
   ),
   [1] = LAYOUT_ergodox_pretty(
@@ -91,12 +89,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
-    case BP_LSPO:
-      perform_space_cadet(record, keycode, KC_LSFT, KC_TRNS, BP_LPRN);
-      return false;
-    case BP_RSPC:
-      perform_space_cadet(record, keycode, KC_LSFT, KC_TRNS, BP_RPRN);
-      return false;
   }
   return true;
 }
