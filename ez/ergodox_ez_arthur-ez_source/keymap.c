@@ -10,9 +10,11 @@
 #include "keymap_canadian_multilingual.h"
 #include "keymap_german_ch.h"
 #include "keymap_jp.h"
+#include "keymap_korean.h"
 #include "keymap_bepo.h"
 #include "keymap_italian.h"
 #include "keymap_slovenian.h"
+#include "keymap_lithuanian_azerty.h"
 #include "keymap_danish.h"
 #include "keymap_norwegian.h"
 #include "keymap_portuguese.h"
@@ -47,6 +49,7 @@ enum custom_keycodes {
   BP_RSPC,
 };
 
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox_pretty(
     BP_DLR,         BP_DQOT,        BP_LGIL,        BP_RGIL,        BP_LPRN,        BP_RPRN,        BP_AT,                                          BP_PERC,        BP_AT,          BP_PLUS,        BP_MINS,        BP_SLSH,        BP_ASTR,        BP_EQL,
@@ -79,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                                     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, TO(3),          KC_TRANSPARENT, KC_TRANSPARENT
   ),
   [3] = LAYOUT_ergodox_pretty(
-    KC_F2,          KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_6,                                           KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,KC_AUDIO_MUTE,  KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_F2,          KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_6,                                           KC_F10,         KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_AUDIO_VOL_DOWN,KC_AUDIO_VOL_UP,KC_AUDIO_MUTE,
     KC_TRANSPARENT, KC_TRANSPARENT, BP_R,           KC_TRANSPARENT, KC_TRANSPARENT, BP_T,           BP_G,                                           KC_BSPACE,      KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, BP_M,                                                                           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
     KC_TRANSPARENT, BP_S,           KC_TRANSPARENT, BP_D,           BP_V,           KC_TRANSPARENT, BP_F,                                           KC_ENTER,       KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
@@ -141,3 +144,5 @@ uint32_t layer_state_set_user(uint32_t state) {
   }
   return state;
 };
+
+
