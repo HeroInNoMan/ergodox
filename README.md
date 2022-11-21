@@ -1,4 +1,4 @@
-Ergodox EZ configurations
+Ergodox EZ and Moonlander configurations
 ==========================
 
-Ergodox EZ config files.
+Ergodox EZ and Moonlander config files.
