@@ -1,4 +1,4 @@
-Ergodox EZ and Moonlander configurations
+Ergodox config files
 ==========================
 
-Ergodox EZ and Moonlander config files.
+Ergodox EZ, Moonlander and Ergodox Planck keyboard configurations files.
